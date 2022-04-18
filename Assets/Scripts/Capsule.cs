@@ -7,6 +7,6 @@ public class Capsule : MonoBehaviour
     public float rotateSpeed;
     void Update()
     {
-        transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime, Space.World);
     }
 }
