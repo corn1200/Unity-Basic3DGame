@@ -6,7 +6,9 @@ public class PlayerBall : MonoBehaviour
 {
     public float jumpPower;
     public int itemCount;
+    public GameManagerLogic manager;
     bool isJump;
+
     Rigidbody rigid;
     AudioSource audio;
 
@@ -49,6 +51,16 @@ public class PlayerBall : MonoBehaviour
             itemCount++;
             audio.Play();
             other.gameObject.SetActive(false);
+        }
+        else if (other.tag == "Finish")
+        {
+            if (itemCount == manager.totalItemCount)
+            {
+                //Game Clear
+            } else
+            {
+                //Restart
+            }
         }
     }
 }
