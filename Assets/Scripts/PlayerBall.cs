@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBall : MonoBehaviour
 {
@@ -52,14 +53,16 @@ public class PlayerBall : MonoBehaviour
             audio.Play();
             other.gameObject.SetActive(false);
         }
-        else if (other.tag == "Finish")
+        else if (other.tag == "Point")
         {
             if (itemCount == manager.totalItemCount)
             {
                 //Game Clear
+                SceneManager.LoadScene("Example1_" + (manager.stage + 1).ToString());
             } else
             {
                 //Restart
+                SceneManager.LoadScene("Example1_" + manager.stage);
             }
         }
     }
