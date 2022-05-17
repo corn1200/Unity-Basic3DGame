@@ -58,11 +58,11 @@ public class PlayerBall : MonoBehaviour
             if (itemCount == manager.totalItemCount)
             {
                 //Game Clear
-                SceneManager.LoadScene("Example1_" + (manager.stage + 1).ToString());
+                SceneManager.LoadScene(manager.stage + 1);
             } else
             {
                 //Restart
-                SceneManager.LoadScene("Example1_" + manager.stage);
+                SceneManager.LoadScene(manager.stage);
             }
         }
     }
