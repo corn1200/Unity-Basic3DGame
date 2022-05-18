@@ -52,6 +52,7 @@ public class PlayerBall : MonoBehaviour
             itemCount++;
             audio.Play();
             other.gameObject.SetActive(false);
+            manager.getItem(itemCount);
         }
         else if (other.tag == "Point")
         {
